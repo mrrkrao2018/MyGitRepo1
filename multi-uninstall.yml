@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Uninstalling tree
+    apt:
+     name: tree
+     state: absent
+     update_cache: yes
+    tags: my_tree
+  - name: Uninstalling openjdk17
+    apt:
+     name: openjdk-17-jdk
+     state: absent
+     update_cache: yes
+    tags: myopenjdk
+  - name: Uninstalling wget
+    apt:
+     name: wget
+     state: absent
+     update_cache: yes

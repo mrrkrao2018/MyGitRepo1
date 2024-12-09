@@ -1,0 +1,9 @@
+---
+- hosts: dbservers
+  become: yes
+  tasks:
+  - name: Using variables
+    apt:
+       name: "{{webserver}}"
+       state: "{{PP}}"
+       update_cache: "{{CC}}"

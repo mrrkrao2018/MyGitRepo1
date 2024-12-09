@@ -1,0 +1,16 @@
+---
+- name: Install Apache on Ubuntu
+  hosts: 10.0.0.5
+  become: yes
+  
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+
+    - name: UNInstall Apache
+      apt:
+        name: apache2
+        state: absent
+

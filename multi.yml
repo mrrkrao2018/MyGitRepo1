@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: installing tree
+    apt:
+     name: tree
+     state: present
+     update_cache: yes
+    tags: my_tree
+  - name: installing openjdk17
+    apt:
+     name: openjdk-17-jdk
+     state: present 
+     update_cache: yes
+    tags: myopenjdk
+  - name: installing wget
+    apt:
+     name: wget
+     state: present
+     update_cache: yes
